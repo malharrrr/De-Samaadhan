@@ -55,7 +55,7 @@ const Grievance = () => {
 
         console.log(body);
 
-        //const res = await axios.post('http://localhost:8080/api/addcomplaint', { body });
+        const res = await axios.post('http://localhost:8080/addcomplaint', { body });
         toast.success('Your form has successfully submited');
     }catch(error){
         console.log(error);
@@ -89,7 +89,7 @@ const Grievance = () => {
                         //    top: '0',
                         //right: '-25vw',  
                     }}/>
-                    
+
     <div className="bg-white bg-cover min-h-screen">
       <header className="h-full w-full bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 border border-gray-100
  py-6 text-white text-center">

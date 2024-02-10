@@ -6,9 +6,9 @@ const db = require('./firebase.js')
 const { encryptFile, decryptFile } = require('./encryption/EncryptDecrypt.js');
 const fs = require('fs');
 const pinFileToIPFS = require('./pinFileToIPFS.js');
-const pinImageToIPFS = require('./pinImageToIPFS.js');
+//const pinImageToIPFS = require('./pinImageToIPFS.js');
 require('dotenv').config();
-const downloadFile = require('./FetchFromIPFS.js');
+//const downloadFile = require('./FetchFromIPFS.js');
 const { deleteFile } = require('./deleteFile.js');
 const secretKey = "f21fa34350a5068fdeeb05cbc05858f4";
 

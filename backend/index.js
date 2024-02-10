@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://localhost:3000/' // your client's origin
+    origin: 'http://localhost:3000' // your client's origin
   }))
 
 app.use(bodyParser.json({ limit: '100mb' })); // Increase the limit
@@ -45,3 +45,8 @@ app.post('/addcomplaint', async (req, res) => {
       res.status(500).send('Error while adding user details');
     }
   });
+
+  const port = parseInt(process.env.PORT) || 8080;
+app.listen(port, () => {
+  console.log(`helloworld: listening on port ${port}`);
+});
