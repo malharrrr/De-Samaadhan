@@ -1,15 +1,20 @@
 *{
     font-family: "Montserrat", sans-serif;
   }
-  .btn1{
-      color: #fff;
-      border-radius: 105px;
-  background: #1EA887;
-  box-shadow: 5px 6px 0px 0px rgba(88, 238, 139, 0.29);
-  padding:  16px 40px;
-  text-decoration: none;
-  font-weight: 700;
-  width: fit-content;
+  .btn1 {
+    color: #fff;
+    border-radius: 105px;
+    background: #1EA887;
+    box-shadow: 5px 6px 0px 0px rgba(88, 238, 139, 0.29);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    width: fit-content;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn1:hover {
+    background: #0000; /* Change the color for the hover effect */
   }
   header {
       display: flex;
@@ -19,7 +24,7 @@
     }
     
     .logo {
-      color: #09384D;
+      color: #FFFFFF;
       font-size: 1.2rem;
       font-weight: 700;
       text-decoration: none;
@@ -30,7 +35,7 @@
     .overlay__content a {
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
-      color: #09384D;
+      color: #FFFFFF;
       text-decoration: none;
     }
     
@@ -71,7 +76,7 @@
     }
     .sideimg .animatedgif{
       position: absolute;
-      top: 24%;
+      top: 15%;
       right: 6%;
     }
     .mainimg .pict{
@@ -84,13 +89,13 @@
       padding-left: 10%;
     }
     .mainslogan{
-      color: #46E821;
+      color: #FFFFFF;
       font-size: 78px;
       font-weight: 700;
       line-height: 111%;
     }
     .subslogan{
-      color: #09384D;
+      color: #FFFFFF;
   
   font-size: 20px;
   font-style: normal;
@@ -103,13 +108,13 @@
       border: none;
     }
     .mainslogan span{
-      color: #46E821;
+      color: #FFFFFF;
     }
     .clienttype{
       margin: 0 15%;
     }
     .clienttype .title{
-      color: #09384D;
+      color: #FFFFFF;
   
   font-size: 30px;
   font-style: normal;
@@ -118,7 +123,7 @@
     }
     .clienttype .title .subtitle{
   width: 60%;
-  color: #09384D;
+  color: #FFFFFF;
   
   
   font-size: 20px;
@@ -218,7 +223,7 @@
     
     .swiper-slide .card h5{
     
-      color: #09384D;
+      color: #FFFFFF;
       
      
       font-size: 80px;

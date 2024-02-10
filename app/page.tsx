@@ -58,7 +58,7 @@ const testUpload = () =>{
         
       <div className='landingpage'>
        <header>
-            <a className="logo" href="/">InsuraLink</a>
+            <a className="logo" href="/">De-Samadhan</a>
             <nav>
                 <ul className="nav__links">
                     <li><a href="#">Services</a></li>
@@ -72,47 +72,61 @@ const testUpload = () =>{
         <div className='bannersection'>
             <div className='slogan'>
               <div className='mainslogan'>               
-               <Typewriter
-              options={{              
-                autoStart: true,
-                loop: true
-              }}
-              onInit={(typewriter) => {
-                typewriter.typeString(
-                  '<span style="color: #46E821; background: -webkit-linear-gradient(135deg, #46E821, #25AF4F); background-clip: text; -webkit-background-clip: text; text-align: center; text-fill-color: transparent; -webkit-text-fill-color: transparent">Protect Your Future.</span>')
-                  .callFunction(() => {
-                    console.log('String typed out!');
-                  })
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .pauseFor(1500)
-                  .start();
-              }} />                 
+              <Typewriter
+  options={{              
+    autoStart: true,
+    loop: true,
+    typingSpeed: 150
+  }}
+  onInit={(typewriter) => {
+    typewriter.typeString(
+      '<span style="color: #46E821; background: -webkit-linear-gradient(135deg, #46E821, #25AF4F); background-clip: text; typingSpeed: 150; -webkit-background-clip: text; text-align: center; text-fill-color: transparent; -webkit-text-fill-color: transparent"></span>')
+      .callFunction(() => {
+        console.log('String typed out!');
+      })
+      .pauseFor(200)
+      .deleteAll()
+      .pauseFor(150)
+      .typeString('Raise your voice.')
+      .pauseFor(250)
+      .deleteAll()
+      .pauseFor(150)
+      .typeString('Express yourself.')
+      .pauseFor(250)
+      .deleteAll()
+      .pauseFor(150)
+      .typeString('Make differenrce')
+      .pauseFor(250)
+      .deleteAll()
+      .pauseFor(150)
+      .start();
+  }}
+/>
+                 
               </div>
               <div className='subslogan'>
-              We understand that unexpected events can have a major impact on your life. That's why we're committed to providing comprehensive insurance coverage to protect you and your assets.
+              Raise your voice anonymously. Get the support you need.Staying silent is not an option.
               </div>
-              <button className='btn1'>
-               Learn more
+              <div class="flex gap-4">
+               <button class='btn1'>
+               Sign in as Client
               </button>
-
+              <button class='btn1'>
+               Sign in as admin
+              </button>
+              </div>
             </div>
             <div className='sideimg'>
-
-                <div className='backgroundimg'>
-                <Image src={lander} alt="landing Image" className="landerimg"/>
-            
-                </div>
                 <div className="animatedgif">
                 <Player
                    autoplay
-                   speed={1.5}
+                   speed={0.7}
                    loop
-                   src="https://lottie.host/4df17f7b-c688-413e-a716-b4a48675abff/cq2p5fIVvX.json"
-                   style={{ height: "300px", width: "300px" }}
+                   src="https://lottie.host/d574cc6a-04d0-4926-83fe-eb8f7b2a3ad1/OPzSOGrRZj.json"
+                   style={{ height: "500px", width: "500px" }}
                                  /> 
                </div>
-               </div>
+            </div>
 
         </div>
         <div className="clienttype">
