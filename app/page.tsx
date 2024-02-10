@@ -48,24 +48,13 @@ const testUpload = () =>{
 * Created with https://www.css-gradient.com
 * Gradient link: https://www.css-gradient.com/?c1=46e821&c2=25af4f&gt=l&gd=dtl
 */
-
-
-
-
   return (
     <main className="p-4">
       
-        
       <div className='landingpage'>
        <header>
             <a className="logo" href="/">De-Samadhan</a>
-            <nav>
-                <ul className="nav__links">
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
+
             {!(user)?
             (<a className="btn1" href="/login">Log in</a>):(<a className="btn1" onClick={handleSignOut}>Sign Out</a>)}
         </header>
@@ -76,7 +65,7 @@ const testUpload = () =>{
   options={{              
     autoStart: true,
     loop: true,
-    typingSpeed: 150
+    typingSpeed: 150,
   }}
   onInit={(typewriter) => {
     typewriter.typeString(
@@ -87,15 +76,15 @@ const testUpload = () =>{
       .pauseFor(200)
       .deleteAll()
       .pauseFor(150)
-      .typeString('Raise your voice.')
+      .typeString('Raise your voice!')
       .pauseFor(250)
       .deleteAll()
       .pauseFor(150)
-      .typeString('Express yourself.')
+      .typeString('Express yourself!')
       .pauseFor(250)
       .deleteAll()
       .pauseFor(150)
-      .typeString('Make differenrce')
+      .typeString('Make difference!')
       .pauseFor(250)
       .deleteAll()
       .pauseFor(150)
@@ -105,7 +94,7 @@ const testUpload = () =>{
                  
               </div>
               <div className='subslogan'>
-              Raise your voice anonymously. Get the support you need.Staying silent is not an option.
+              Raise your voice anonymously. File a Decentralized complaint,<br />Get the support you need. Staying silent is not an option.
               </div>
               <div class="flex gap-4">
                <button class='btn1'>
@@ -130,23 +119,22 @@ const testUpload = () =>{
 
         </div>
         <div className="clienttype">
-          <div className="title flex justify-between"><p>What makes
-Insured+ accessible</p><p className="subtitle">We believe that insurance should provide you with peace of mind, knowing that you're covered in case of an unexpected event.</p>
+          <div className="title flex justify-between"><p>What do we do?</p><p className="subtitle">We believe that complaints should provide anonymous & decentralized making it immutable for any crimes.</p>
 </div>
     <div className="landcards">
       <div className="landcard">
-        <h5>Healthcare in your fingertips</h5>
-        <p>That's why we offer personalised support and guidance throughout the insurance process, </p>
+        <h5>Client Portal</h5>
+        <p>We offer a client portal where user can file their complaint as well as track the progress </p>
         
       </div>
 
       <div className="landcard">
-      <h5>Healthcare in your fingertips</h5>
-        <p>That's why we offer personalised support and guidance throughout the insurance process, </p> 
+      <h5>Admin Portal</h5>
+        <p>Authorities can track all the complaints and resolve them on the type of emergency </p> 
       </div>
       <div className="landcard">
-      <h5>Healthcare in your fingertips</h5>
-        <p>That's why we offer personalised support and guidance throughout the insurance process, </p>
+      <h5>Decentralised</h5>
+        <p>No one can access user data making sure all the complaints are secured and immutable </p>
 
       </div>
       </div>
@@ -167,20 +155,16 @@ Insured+ accessible</p><p className="subtitle">We believe that insurance should 
         className="mySwiper"
       >
         <SwiperSlide><div className="card">
-          <h5>20+</h5>
-          <span>Insurance Partner Companies</span>          
+          <span>Tax Complaints</span>          
          </div></SwiperSlide>
          <SwiperSlide><div className="card">
-          <h5>AI</h5>
-          <span>Tools Leveraged</span>          
+          <span>FIRs</span>          
          </div></SwiperSlide>
          <SwiperSlide><div className="card">
-          <h5>150+</h5>
-          <span>Employees Insured</span>          
+          <span>Fraud Alert</span>          
          </div></SwiperSlide>
          <SwiperSlide><div className="card">
-          <h5>28</h5>
-          <span>Team of Reliable Brokers</span>          
+          <span>Any Complainta</span>          
          </div></SwiperSlide>
          
          
@@ -189,7 +173,7 @@ Insured+ accessible</p><p className="subtitle">We believe that insurance should 
       </Swiper>
         <div className="testimonialtext">
           <p>
-          That's why we offer personalised support and guidance throughout the insurance process,
+          Your data is decentralized,immutable,interoperable & you stay anonymous.
           </p>
         </div>
         </div>
