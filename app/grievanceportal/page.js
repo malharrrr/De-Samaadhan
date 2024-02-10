@@ -9,18 +9,65 @@ import { db } from "../firebase";
 import toast, { Toaster } from 'react-hot-toast';
 
 const Grievance = () => {
+
+    async function convertPdf(){
+        let imgBase64 = await new Promise((resolve, reject) => {
+            let reader = new FileReader();
+            reader.onload = function () {
+              resolve(reader.result);
+            };
+            reader.onerror = function (error) {
+              reject(error);
+            };
+            reader.readAsDataURL(pdfurl);
+            
+          });
+          
+          console.log(imgBase64);
+    }
+
+
+
   const [complaintTitle, setComplaintTitle] = useState('');
   const [category, setCategory] = useState('');
   const [complaintDescription, setComplaintDescription] = useState('');
+  const [pdfurl,setPdfurl]=useState('')
 
-  const handleSubmit = (e) => {
+  const { user } = UserAuth();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission, e.g., send data to backend
-    console.log({ complaintTitle, category, complaintDescription });
+    console.log({ complaintTitle, category, complaintDescription, pdfurl });
+
+    try{
+
+        let imgBase64 = await convertPdf();
+
+        const body = {
+        useRef: user.uid,
+        jsonData: {
+          "Complaint-Title": complaintTitle,
+          "Category": category,
+          "Complaint-Description": complaintDescription,          
+          "pdf": imgBase64
+        }}
+
+        console.log(body);
+
+        //const res = await axios.post('http://localhost:8080/api/addcomplaint', { body });
+        toast.success('Your form has successfully submited');
+    }catch(error){
+        console.log(error);
+        toast.error('Error in Form Submission')
+    }  
+
+
     // Clear form fields after submission
     setComplaintTitle('');
     setCategory('');
     setComplaintDescription('');
+    setPdfurl('');
   };
 
   return (<>
@@ -41,8 +88,8 @@ const Grievance = () => {
                             position: 'absolute',  // Use 'fixed' to keep it fixed relative to the viewport
                         //    top: '0',
                         //right: '-25vw',  
-                    }}
-                                        />
+                    }}/>
+                    
     <div className="bg-white bg-cover min-h-screen">
       <header className="h-full w-full bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 border border-gray-100
  py-6 text-white text-center">
@@ -92,6 +139,11 @@ const Grievance = () => {
               required
             ></textarea>
           </div>
+          <h6 className='text-black'>Upload Documents</h6>
+      <div className='fileupload text-black'>
+        <input  accept='pdf' type="file" onChange={(e) => {setPdfurl(e.target.files[0]);e.target.files[0].onload = function() {console.log(e.target.files[0]);}}}/>
+        <span className='text-black'>*Upload Documents in .pdf file format  </span>
+      </div>
           <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
         </form>
       </div>

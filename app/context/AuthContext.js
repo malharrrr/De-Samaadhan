@@ -1,7 +1,7 @@
 'use client'
 import { useContext, createContext, useState, useEffect } from "react";
 import {  signInWithPopup,  signOut,  onAuthStateChanged,  GoogleAuthProvider,  createUserWithEmailAndPassword,  signInWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore"; 
+import { doc, setDoc, getDocs, collection } from "firebase/firestore"; 
 import { auth } from "../firebase.js";
 import { db } from "../firebase.js";
 
@@ -21,22 +21,33 @@ export const AuthContextProvider = ({ children }) => {
             });
     
             console.log("User Registered Succesfully---- adding user id to database");
-            // await setDoc(doc(db,"Users",uid),{
-            //     username: userName
-            // });
-            // console.log("pushed to database");
+            await setDoc(doc(db,"Users",uid),{
+                userID: uid
+            });
+            console.log("pushed to database");
         } catch (error) {
             console.log(error);
         }
     }
 
     const Login = async(email,password)=>{
-        let uid = '';        
+        let uid = ''; 
+        let role = '';       
         try{ 
             await signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
             const user = userCredential.user;
             uid = user.uid;
           });
+
+          const Userdata = await getDocs(collection(db,"Users"));
+          Userdata.forEach((doc)=>{
+            if(uid == doc.id){
+              console.log('You are a Client');        
+              role = "client";
+            }
+          });
+
+          return role;
         }catch (error){
             console.log(error);
         }
