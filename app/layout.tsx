@@ -18,6 +18,7 @@ export default function RootLayoutRootLayout({
   return (
     <html lang="en">
       <AuthContextProvider>
+        
       <body className={inter.className}>      
             {children}      
       </body>

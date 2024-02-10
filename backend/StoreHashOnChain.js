@@ -29,9 +29,16 @@ const { JsonRpcProvider } = require('ethers/providers');
     const contract = new ethers.Contract(contractAddress, contractABI, connectedWallet);
 
     // Function to store a string
-   const storeUserHash= async (userRef, IPFShash)=> {
+    
+
+
+
+   const storeUserHash= async (useRef, IPFShash)=> {
         try {
-            await contract.setUserHash(userRef, IPFShash);
+            await contract.setUserId(useRef);
+            await contract.setOfficerId(124);
+            await contract.fileComplain(useRef);
+            await contract.setUserHash(useRef, IPFShash);
             console.log('String stored successfully');
         } catch (error) {
             console.error('Error while storing string:', error);

@@ -8,11 +8,12 @@ const fs = require('fs');
 const pinFileToIPFS = require('./pinFileToIPFS.js');
 //const pinImageToIPFS = require('./pinImageToIPFS.js');
 require('dotenv').config();
-//const downloadFile = require('./FetchFromIPFS.js');
+const downloadFile = require('./FetchFromIPFS.js');
 const { deleteFile } = require('./deleteFile.js');
 const secretKey = "f21fa34350a5068fdeeb05cbc05858f4";
 
 async function addUserDetails(useRef) {
+    
     try {
         await encryptFile(`${useRef}.json`, secretKey, `${useRef}.txt`);
         console.log(`file Encrypted with ${useRef}.txt`);   
@@ -31,12 +32,12 @@ async function addUserDetails(useRef) {
 // addUserDetails(useRef, FormData)
 
 
-async function fetchUserDetails(useRef) {
-    try {
-      const UserKey = await readKey(useRef);
+async function fetchUserDetails() {
+    const useRef = 123;
+    try {      
       const IpfsHash = await getUserHash(useRef);
       await downloadFile(IpfsHash, `${useRef}`);
-      const decryptedFileMsg = await decryptFile(`${useRef}.txt`, UserKey, `${useRef}_decrypt.json`);
+      const decryptedFileMsg = await decryptFile(`${useRef}.txt`, secretKey, `${useRef}_decrypt.json`);
       console.log(decryptedFileMsg);
   
       const data = await fs.readFileSync(`${useRef}_decrypt.json`);
