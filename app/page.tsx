@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { UserAuth } from "./context/AuthContext.js";
 import './landing.css'
 import Image from "next/image.js";
-import lander from '../public/Frame 7.png'
+import lander from '../public/unsplash.jpg'
 import Footer from "./Footer.js";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -36,46 +36,6 @@ export default function Home() {
 const printUser = ()=>{
   fetchDocumentId();
 }
-
-  const [shouldReload, setShouldReload] = useState(false);
-
-    // useEffect(() => {
-    //   console.log("I AM INSIDE");
-    //   // Check if the page has been visited before by checking local storage
-    //   const hasVisited = localStorage.getItem('hasVisited');
-
-    //   // If the page has not been visited, set the flag in local storage and reload
-    //   if (!hasVisited) {
-    //     localStorage.setItem('hasVisited', 'true');
-    //     setShouldReload(true);
-    //   }
-    // }, []);
-
-    // useEffect(()=>{
-    //   location.reload();
-    //   console.log("HELLO");
-    // },[])
-
-    useEffect(()=>{
-      
-  
-      window.__be = window.__be || {};
-      window.__be.id = "65886077b1d7eb00078b8cc5";
-
-        const be = document.createElement('script');
-        be.type = 'text/javascript'; 
-        be.async = true;
-        be.src = ('https:' === document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
-
-        const s = document.getElementsByTagName('script')[0]; 
-        s.parentNode.insertBefore(be, s);
-      if(user){
-      Router.refresh();
-    }
-    },[user])
-
-  
-    
 
 const testUpload = () =>{
   const res = upload();

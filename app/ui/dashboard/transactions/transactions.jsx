@@ -4,99 +4,43 @@ import styles from "./transactions.module.css";
 const Transactions = () => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Latest Transactions</h2>
+      <h2 className={styles.title}>Latest Complaints</h2>
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Name</td>
-            <td>Status</td>
-            <td>Date</td>
-            <td>Amount</td>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
-                John Doe
-              </div>
-            </td>
+          <td>1</td>
+            <td>Phone Theft</td>
             <td>
               <span className={`${styles.status} ${styles.pending}`}>
                 Pending
               </span>
             </td>
+            <td>Theft</td>
             <td>14.02.2024</td>
-            <td>$3.200</td>
           </tr>
+          {/* Repeat similar structure for other complaints */}
+          {/* Example for another complaint */}
           <tr>
+            <td>2</td>
             <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
-                John Doe
-              </div>
+                Fraud messages
             </td>
             <td>
               <span className={`${styles.status} ${styles.done}`}>Done</span>
             </td>
+            <td>Fraud</td>
             <td>14.02.2024</td>
-            <td>$3.200</td>
           </tr>
-          <tr>
-            <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
-                John Doe
-              </div>
-            </td>
-            <td>
-              <span className={`${styles.status} ${styles.cancelled}`}>
-                Cancelled
-              </span>
-            </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
-          </tr>
-          <tr>
-            <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
-                John Doe
-              </div>
-            </td>
-            <td>
-              <span className={`${styles.status} ${styles.pending}`}>
-                Pending
-              </span>
-            </td>
-            <td>14.02.2024</td>
-            <td>$3.200</td>
-          </tr>
+          {/* Repeat this structure for other complaints */}
         </tbody>
       </table>
     </div>
