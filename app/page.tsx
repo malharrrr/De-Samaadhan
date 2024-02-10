@@ -118,7 +118,7 @@ const testUpload = () =>{
 
         </div>
         <div className="clienttype">
-          <div className="title flex justify-between"><p>What do we do?</p><p className="subtitle">We believe that complaints should provide anonymous & decentralized making it immutable for any crimes.</p>
+          <div className="title flex justify-between"><p>What do we do?</p>
 </div>
     <div className="landcards">
       <div className="landcard">
