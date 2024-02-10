@@ -90,9 +90,10 @@
     }
     .mainslogan{
       color: #FFFFFF;
-      font-size: 78px;
+      font-size: 65px;
       font-weight: 700;
       line-height: 111%;
+      padding-bottom: 5%;
     }
     .subslogan{
       color: #FFFFFF;
@@ -148,7 +149,7 @@
       height: 300px;
     }
     .landcard h5{
-      color: #1E1E1E;
+      color: #ffffff;
   
       
       font-size: 20px;
@@ -188,12 +189,13 @@
     }
   
     .testimonial{
+      padding-top: 10%;
       width: 100%;
       background-color: #1EA887;
       height: 500px;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: left;
+      align-items: left;
       margin-top: 50px;
     }
    
@@ -224,16 +226,15 @@
     .swiper-slide .card h5{
     
       color: #FFFFFF;
-      
-     
       font-size: 80px;
       font-style: normal;
       font-weight: 700;
       line-height: 150%;
+      align-items: center;
     }
     .swiper-slide .card{
       height: 300px;
-      padding: 20px;
+      padding: 18px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -249,7 +250,6 @@
     .swiper-slide .card p{
       color: #828282;
   margin-right: 0;
-  
   font-size: 20px;
   font-style: normal;
   font-weight: 200;
@@ -257,11 +257,9 @@
     }
   
     .testimonialtext{
-      width: 700px;
+      width: 800px;
       color: #FFF;
-  
-  text-align: center;
-  
+  text-align: left;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
