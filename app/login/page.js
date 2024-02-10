@@ -35,14 +35,11 @@ export default function login(){
            const response = await Login(email,password);
            console.log(response);
            window.location.href ='/';
-        //    if(response == "client"){
-        //         console.log("I enter into IF");
-        //         window.location.href = '/clientdashboard';
-        //    }else if(response == "broker"){
-        //     window.location.href = '/brokerdashboard';
-        //    }else if(response == "insuranceAgent"){
-        //     window.location.href = '/insurancedashboard';
-        //    }
+           if(response == "client"){                
+                window.location.href = '/clientdashboard';
+           }else if(response == "officer"){
+                window.location.href = '/officerdashboard';
+           }
         }catch(error){        
             console.log(error);
         }        
@@ -68,19 +65,19 @@ export default function login(){
                         autoplay
                         speed={1.5}
                         loop
-                        src="https://lottie.host/6586a1f8-60e6-4768-b44e-11c940439ee2/aeqx72AMS2.json"
-                        style={{ backgroundColor: '#fff',
+                        src="https://lottie.host/d4c38973-aa8b-4df2-a10e-0a426c6be263/sNshsuUZPw.json"
+                        style={{ backgroundColor: '#000',
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                         width: '100vw',
                         height: '100vh',
                         margin: '0px',
                         padding: '0px',
-                        //float: 'right',
+                        float: 'right',
                         //zIndex: '0',
                             position: 'relative',  // Use 'fixed' to keep it fixed relative to the viewport
                         //    top: '0',
-                        right: '-10vw',  
+                        right: '-25vw',  
                     }}
                                         /> 
                     </div>
@@ -92,11 +89,11 @@ export default function login(){
     }/>
    
         <div className={styles.logincontainer} id="login">
-            <div className='flex text-black justify-center py-3 text-sm'>
+            <div className='flex justify-center py-3 text-sm'>
                 <span>Don't have an account? <Link href="/signup">Sign Up</Link></span>                
             </div>
           
-            <header className=' text-black text-center text-5xl pb-5'>Login</header>
+            <header className=' text-center text-5xl pb-5'>Login</header>
             <div className={styles.inputbox}>
                 <input type="text" class="input-field" required value={email} onChange={(event) => setEmail(event.currentTarget.value)}  placeholder="Your Email"/>
                 <i class="bx bx-user"></i>
@@ -113,10 +110,10 @@ export default function login(){
             <div className="flex justify-between text-xs">
                 <div class="one">
                     <input type="checkbox" id="login-check"/>
-                    <label for="login-check" className="text-black"> Remember Me</label>
+                    <label for="login-check"> Remember Me</label>
                 </div>
                 <div class="two">
-                    <label><a href="#"><p className="text-black">Forgot password?</p></a></label>
+                    <label><a href="#"><p >Forgot password?</p></a></label>
                 </div>
             </div>
         </div>

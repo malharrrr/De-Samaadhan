@@ -52,8 +52,8 @@ export default function signup(){
                    autoplay
                    speed={1.5}
                    loop
-                   src="https://lottie.host/6586a1f8-60e6-4768-b44e-11c940439ee2/aeqx72AMS2.json"
-                   style={{ backgroundColor: '#fff',
+                   src="https://lottie.host/d4c38973-aa8b-4df2-a10e-0a426c6be263/sNshsuUZPw.json"
+                   style={{ backgroundColor: '#000',
                    backgroundSize: 'cover',
                    backgroundRepeat: 'no-repeat',
                    width: '100vw',
@@ -64,16 +64,16 @@ export default function signup(){
                    //zIndex: '0',
                     position: 'relative',  // Use 'fixed' to keep it fixed relative to the viewport
                 //    top: '0',
-                  right: '-10vw',  
+                right: '-25vw',  
             }}
                                  /> 
                </div>       
       
         <div className={styles.registercontainer} id="register">
-           <div className='flex justify-center text-black py-3 text-sm'>
-               <span className='text-black'>Have an account? <a href="/login">Login</a></span>                
+           <div className='flex justify-center py-3 text-sm'>
+               <span>Have an account? <a href="/login">Login</a></span>                
            </div>
-           <header className='text-center text-black text-5xl pb-5'>Sign Up</header>
+           <header className='text-center text-5xl pb-5'>Sign Up</header>
            <div className='flex gap-5 justify-center py-5'>
                <div className={styles.inputbox}>
                    <input type="text" class="input-field" placeholder="Firstname"/>
@@ -95,28 +95,7 @@ export default function signup(){
                </div>
               
 
-           </div> 
-           <div className={styles.inputbox}>
-                <select
-                    className="input-field"
-                    value={role}
-                    onChange={(event) => setRole(event.currentTarget.value)}
-                    required
-                >
-                    <option value="" disabled selected>
-                    Select Role
-                    </option>
-                    <option value="client">Client</option>
-                    <option value="broker">Broker</option>
-                    <option value="insuranceAgent">Insurance Agent</option>
-                </select>
-                <i class="bx bx-envelope"></i>
-            </div>
-
-               <div className={styles.inputbox}>
-                   <input type="text" class="input-field" placeholder="Broker Id" required value={brId} onChange={(event) => setBrId(event.currentTarget.value)}/>
-                   <i class="bx bx-envelope"></i>
-               </div>
+           </div>          
 
            <div className={styles.inputbox}>               
                <input type="submit" class="submit" onClick={regi} onSubmit={regi} value="Register"/>   

@@ -14,6 +14,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: black;
 }
 
 .nav{
@@ -97,7 +98,8 @@ body{
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(247, 244, 244, 0.349);
     border-radius: 50px;
-    min-width: 500px;    
+    min-width: 500px;
+    left: 15rem;    
     padding: 2rem;
     position: absolute;
 }
@@ -111,9 +113,10 @@ body{
     display: flex;
     flex-direction: column;
     transition: .5s ease-in-out;
-    z-index: 1000000;
+    z-index: 100;
     position: absolute;
     padding: 2rem;
+    left: 10rem; 
 }
 /* .top span{
     color: #fff;
