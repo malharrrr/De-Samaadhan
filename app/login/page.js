@@ -15,7 +15,7 @@ export default function login(){
 
     const [email,setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { user, googleSignIn, logOut, login} = UserAuth();
+    const { user, googleSignIn, LogOut, Login} = UserAuth();
     const [loading, setLoading] = useState(true);
    
   
@@ -32,16 +32,17 @@ export default function login(){
     const logIn = async(e) =>{
         e.preventDefault();
         try{
-           const response = await login(email,password);
+           const response = await Login(email,password);
            console.log(response);
-           if(response == "client"){
-                console.log("I enter into IF");
-                window.location.href = '/clientdashboard';
-           }else if(response == "broker"){
-            window.location.href = '/brokerdashboard';
-           }else if(response == "insuranceAgent"){
-            window.location.href = '/insurancedashboard';
-           }
+           window.location.href ='/';
+        //    if(response == "client"){
+        //         console.log("I enter into IF");
+        //         window.location.href = '/clientdashboard';
+        //    }else if(response == "broker"){
+        //     window.location.href = '/brokerdashboard';
+        //    }else if(response == "insuranceAgent"){
+        //     window.location.href = '/insurancedashboard';
+        //    }
         }catch(error){        
             console.log(error);
         }        

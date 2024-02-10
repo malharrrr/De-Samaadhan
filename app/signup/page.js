@@ -12,7 +12,7 @@ export default function signup(){
     const [email,setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [role, setRole] = useState("");
-    const { user, googleSignIn, logOut, register } = UserAuth();
+    const { user, googleSignIn, LogOut, Register } = UserAuth();
     const [loading, setLoading] = useState(true);
     const [brId , setBrId] = useState();
 
@@ -27,8 +27,8 @@ export default function signup(){
     async function regi(e){
     e.preventDefault();
         try{
-            await register(email,password,role,brId);
-            window.location.href='/';            
+            await Register(email,password);
+            window.location.href='/login';            
         }catch(error){
           
             console.log(error);
@@ -70,10 +70,10 @@ export default function signup(){
                </div>       
       
         <div className={styles.registercontainer} id="register">
-           <div className='flex justify-center py-3 text-sm'>
-               <span>Have an account? <a href="/login">Login</a></span>                
+           <div className='flex justify-center text-black py-3 text-sm'>
+               <span className='text-black'>Have an account? <a href="/login">Login</a></span>                
            </div>
-           <header className='text-center text-5xl pb-5'>Sign Up</header>
+           <header className='text-center text-black text-5xl pb-5'>Sign Up</header>
            <div className='flex gap-5 justify-center py-5'>
                <div className={styles.inputbox}>
                    <input type="text" class="input-field" placeholder="Firstname"/>

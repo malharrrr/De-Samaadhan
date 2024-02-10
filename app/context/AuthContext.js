@@ -12,7 +12,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     
-    async function Register(email,userName,password){
+    async function Register(email,password){
         let uid = '';
         try {
             const res = await createUserWithEmailAndPassword(auth,email,password).then((userCredential)=>{
@@ -21,10 +21,10 @@ export const AuthContextProvider = ({ children }) => {
             });
     
             console.log("User Registered Succesfully---- adding user id to database");
-            await setDoc(doc(db,"Users",uid),{
-                username: userName
-            });
-            console.log("pushed to database");
+            // await setDoc(doc(db,"Users",uid),{
+            //     username: userName
+            // });
+            // console.log("pushed to database");
         } catch (error) {
             console.log(error);
         }
