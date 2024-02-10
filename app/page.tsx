@@ -64,8 +64,7 @@ const testUpload = () =>{
               <Typewriter
   options={{              
     autoStart: true,
-    loop: true,
-    typingSpeed: 150,
+    loop: true,    
   }}
   onInit={(typewriter) => {
     typewriter.typeString(
