@@ -1,35 +1,21 @@
 
 const ethersFunctions = require('./StoreHashOnChain.js');
 const { storeUserHash, getUserHash, getUserCertificateHash, storeUserCertificateHash, contract, contractAddress, contractABI, connectedWallet, provider, wallet, privateKe } = ethersFunctions;
-const { collection, getDocs, getDoc, doc } = require('firebase/firestore')
+const { collection, getDocs, getDoc, doc } = require('firebase/firestore');
 const db = require('./firebase.js')
-const { encryptFile, decryptFile } = require('./EncryptDecrypt.js');
+const { encryptFile, decryptFile } = require('./encryption/EncryptDecrypt.js');
 const fs = require('fs');
-const pinFileToIPFS = require('./pinFileToIPFS.js')
-const pinImageToIPFS = require('./pinImageToIPFS.js')
+const pinFileToIPFS = require('./pinFileToIPFS.js');
+const pinImageToIPFS = require('./pinImageToIPFS.js');
 require('dotenv').config();
 const downloadFile = require('./FetchFromIPFS.js');
-const generateCertificate = require('./generateCertificate.js');
 const { deleteFile } = require('./deleteFile.js');
-const sendEmailToRecipient = require('./mailer.js');
-const revokeCertificate = require('./revokeCertificate.js');
+const secretKey = "f21fa34350a5068fdeeb05cbc05858f4";
+
 async function addUserDetails(useRef) {
     try {
-        console.log('creating user');
-        const UserKey = await readKey(useRef);
-        console.log('key fetched from db');
-
-        await encryptFile(`${useRef}.json`, UserKey, `${useRef}.txt`);
-        console.log(`file Encrypted with ${useRef}.txt`);
-
-        // Check if file exists after encryption
-        // try {
-        //     //await fs.access(`${useRef}.txt`);
-        //     console.log('file exists');
-        // } catch (error) {
-        //     console.error('file does not exist');
-        //     throw error; // Propagate the error up if file doesn't exist
-        // }
+        await encryptFile(`${useRef}.json`, secretKey, `${useRef}.txt`);
+        console.log(`file Encrypted with ${useRef}.txt`);   
 
         const IPFSObject = await pinFileToIPFS(useRef);
         await storeUserHash(useRef, IPFSObject);
@@ -88,41 +74,6 @@ async function fetchuserCertificate(useRef){
     const imageHash = await getUserCertificateHash(useRef)
     return imageHash    
 }
-// 
-
-async function readKey(userRef) {
-    const docSnapshot = await getDoc(doc(db, "Client", userRef));
-
-    if (!docSnapshot.exists()) {
-        console.log("No such document!");
-        return null;
-    } else {
-        const data = docSnapshot.data();
-        console.log(data)
-        return data.key;
-    }
-}
-// readKey('fpRZnoX95eVBECjNKiodUeOzAd83')
-
-// readKey()
-
-// async function readKey() {
-//     const querySnapshot = await getDocs(collection(db, "Details"));
-//     querySnapshot.forEach((doc) => {
-//         const docRefID = doc;
-//         const userkey = doc.data().key;
-//         console.log(`${docRefID} = > ${userkey}`);
-
-//     });
-// }
-
-
-
-// encryptFile ('./Data/johndoe.json', 'vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3', 'output.txt');
-// decryptFile ('output.txt', 'vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3', 'output.json');
-// pinFileToIPFS();
-
-
 
 
 module.exports = { addUserDetails, fetchUserDetails, genCertificate, revoCertificate,fetchuserCertificate } 
