@@ -46,6 +46,29 @@ app.post('/addcomplaint', async (req, res) => {
     }
   });
 
+
+  app.post('/getuserdetails', async (req, res) => {
+    const { useRef } = req.body;
+    try {
+      await fetchUserDetails(); // Ensure file creation completes before reading it
+  
+      // Now read the file asynchronously
+      try {
+        const data = await fetchUserDetails();     
+        const jsonData = JSON.parse(data.toString());
+        console.log(jsonData);
+        res.status(200).send(jsonData);
+      } catch (err) {
+        console.error('Error reading file:', err);
+        res.status(500).send('Error reading file');
+      }
+    } catch (e) {
+      console.log(e);
+      res.status(500).send('Error fetching user details');
+    }
+  
+  });
+
   const port = parseInt(process.env.PORT) || 8080;
 app.listen(port, () => {
   console.log(`helloworld: listening on port ${port}`);

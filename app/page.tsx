@@ -23,11 +23,11 @@ export default function Home() {
 
   const Router = useRouter();
 
-  const {  user,logOut, upload, fetchDocumentId } = UserAuth();
+  const {  user, LogOut, upload, fetchDocumentId } = UserAuth();
 
   const handleSignOut = async () => {
     try {
-    await logOut();
+    await LogOut();
     } catch (error) {
     console.log(error);
     }
@@ -76,7 +76,6 @@ const testUpload = () =>{
   options={{              
     autoStart: true,
     loop: true,
-    typingSpeed: 150
   }}
   onInit={(typewriter) => {
     typewriter.typeString(
@@ -107,11 +106,11 @@ const testUpload = () =>{
               <div className='subslogan'>
               Raise your voice anonymously. Get the support you need.Staying silent is not an option.
               </div>
-              <div class="flex gap-4">
-               <button class='btn1'>
+              <div className="flex gap-4">
+               <button className='btn1'>
                Sign in as Client
               </button>
-              <button class='btn1'>
+              <button className='btn1'>
                Sign in as admin
               </button>
               </div>
