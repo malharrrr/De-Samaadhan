@@ -42,15 +42,12 @@ const Dashboard =() => {
 ];
 
 async function fetchData(){
-  console.log("sending request ");
+  console.log("USER ID IS ",user.uid);
   const response = await axios.post('http://localhost:8080/getcomplaints', { useRef: user.uid });
 }
 
 
-useEffect(() => {
-  // Fetch data when component mounts
-  fetchData();
-}, []);
+
 
 
   return (
@@ -61,6 +58,7 @@ useEffect(() => {
             <Card item={item} key={item.id} />
           ))}          
         </div>
+        <button onClick={fetchData} className="text-3xl">FETCH</button>
         {/* <button onClick={() => fetchData()} className="text-3xl">FETCH DATA</button> */}
         <Transactions />
         <Chart />

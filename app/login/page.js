@@ -35,7 +35,7 @@ export default function login(){
            const response = await Login(email,password);
            console.log(response);          
            if(response == "client"){                
-                window.location.href = '/grievanceportal';
+                window.location.href = '/dashboard';
            }else if(response == "officer"){
                 window.location.href = '/officerdashboard';
            }

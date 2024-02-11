@@ -39,8 +39,8 @@ async function fetchSpecificUserComplaintDetails(useRef /**should be user id */)
         const data = await Promise.all(
             res.map(async (complaintId) => {
                 const userHash = await getUserHash(useRef, complaintId);
-                const IpfsHash = await getUserHash(useRef);
-                await downloadFile(IpfsHash, `${useRef}_${complaintId}`);
+                //const IpfsHash = await getUserHash(useRef);
+                await downloadFile('QmZQH9uhEPGnf3PVsiDz8b7ftoR9UAbWc1g5pCDTogpbhH', `${useRef}_${complaintId}`);
                 const decryptedFileMsg = await decryptFile(`${useRef}_${complaintId}.txt`, secretKey, `${useRef}_${complaintId}_decrypt.json`);
                 console.log(decryptedFileMsg);
 
@@ -66,18 +66,17 @@ async function fetchSpecificUserComplaintDetails(useRef /**should be user id */)
     }
 }
 
-async function fetchAllAdmin(){
+async function fetchAllAdmin(useRef){
     const IpfsHash = await getUserHash(useRef);
-    await downloadFile(IpfsHash, `${useRef}_${complaintId}`);
-                const decryptedFileMsg = await decryptFile(`${useRef}_${complaintId}.txt`, secretKey, `${useRef}_${complaintId}_decrypt.json`);
+    await downloadFile(IpfsHash, `${useRef}`);
+                const decryptedFileMsg = await decryptFile(`${useRef}.txt`, secretKey, `${useRef}_decrypt.json`);
                 console.log(decryptedFileMsg);
 
                 const jsonData = await fs.readFileSync(`${useRef}_${complaintId}_decrypt.json`);
-                deleteFile(`${useRef}_${complaintId}.txt`);
-                deleteFile(`${useRef}_${complaintId}_decrypt.json`);
+                deleteFile(`${useRef}.txt`);
+                deleteFile(`${useRef}_decrypt.json`);
 
                 return {
-                    complaintId,
                     data: JSON.parse(jsonData)
                 };
 }

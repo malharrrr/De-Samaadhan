@@ -50,12 +50,12 @@ app.post('/addcomplaint', async (req, res) => {
   app.post('/getcomplaints', async (req, res) => {
     const { useRef } = req.body;
     try {
-      await fetchSpecificUserComplaintDetails(useRef/**send user id */); // Ensure file creation completes before reading it
-      await fetchAdminComplaintIds();
+      //await fetchSpecificUserComplaintDetails(useRef/**send user id */); // Ensure file creation completes before reading it
+      //await fetchAdminComplaintIds();
   
       // Now read the file asynchronously
       try {
-        const data = await fetchUserDetails(useRef);     
+        const data = await fetchSpecificUserComplaintDetails(useRef/**send user id */);     
         const jsonData = JSON.parse(data.toString());
         console.log(jsonData);
         res.status(200).send(jsonData);
