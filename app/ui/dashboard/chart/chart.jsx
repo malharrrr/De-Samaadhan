@@ -1,43 +1,47 @@
 "use client"
-
 import styles from './chart.module.css'
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
   {
     name: "Sun",
-    visit: 4000,
-    click: 2400,
+    Pending: 78,
+    Flagged: 65,
+    Completed:32,
   },
   {
-    name: "Mon",
-    visit: 3000,
-    click: 1398,
+    name: "MON",
+    Pending: 74,
+    Flagged: 72,
+    Completed:41,
   },
   {
-    name: "Tue",
-    visit: 2000,
-    click: 3800,
+    name: "TUE",
+    Pending: 85,
+    Flagged: 52,
+    Completed:45,
+  },{
+    name: "WED",
+    Pending: 72,
+    Flagged: 43,
+    Completed:58,
+  },{
+    name: "THU",
+    Pending: 40,
+    Flagged: 24,
+    Completed:30,
   },
   {
-    name: "Wed",
-    visit: 2780,
-    click: 3908,
+    name: "FRI",
+    Pending: 68,
+    Flagged: 25,
+    Completed:12,
   },
   {
-    name: "Thu",
-    visit: 1890,
-    click: 4800,
-  },
-  {
-    name: "Fri",
-    visit: 2390,
-    click: 3800,
-  },
-  {
-    name: "Sat",
-    visit: 3490,
-    click: 4300,
+    name: "SAT",
+    Pending: 79,
+    Flagged: 28,
+    Completed:43
   },
 ];
 
@@ -61,8 +65,9 @@ const Chart = () => {
           <YAxis />
           <Tooltip contentStyle={{background:"#151c2c", border:"none"}}/>
           <Legend />
-          <Line type="monotone" dataKey="visit" stroke="#8884d8" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="click" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
+          <Line type="monotone" dataKey="Pending" stroke="#8884d8" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="Completed" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
+          <Line type="monotone" dataKey="Flagged" stroke="#D70040" strokeDasharray="3 4 5 2" />
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -27,8 +27,6 @@ const Transactions = () => {
             <td>Theft</td>
             <td>14.02.2024</td>
           </tr>
-          {/* Repeat similar structure for other complaints */}
-          {/* Example for another complaint */}
           <tr>
             <td>2</td>
             <td>
@@ -40,7 +38,28 @@ const Transactions = () => {
             <td>Fraud</td>
             <td>14.02.2024</td>
           </tr>
-          {/* Repeat this structure for other complaints */}
+          <tr>
+            <td>3</td>
+            <td>
+                Transactiion fraud
+            </td>
+            <td>
+              <span className={`${styles.status} ${styles.done}`}>Done</span>
+            </td>
+            <td>Fraud</td>
+            <td>14.02.2024</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+                Transactiion fraud
+            </td>
+            <td>
+              <span className={`${styles.status} ${styles.done}`}>Done</span>
+            </td>
+            <td>Fraud</td>
+            <td>14.02.2024</td>
+          </tr>
         </tbody>
       </table>
     </div>

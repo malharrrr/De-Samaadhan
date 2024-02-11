@@ -13,26 +13,26 @@ const Dashboard =async() => {
   {
     id: 1,
     title: "Total Complaints",
-    number: 10.928,
+    number: 76,
     change: 12,
   },
   {
     id: 2,
     title: "Pending",
-    number: 8.236,
+    number: 23,
     change: -2,
   },
   {
     id: 3,
     title: "Approved",
-    number: 6.642,
+    number: 34,
     change: 18,
   },
 
   {
     id: 4,
     title: "Flagged",
-    number: 6.642,
+    number: 19,
     change: 13,
   },
 ];

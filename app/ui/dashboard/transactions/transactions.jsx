@@ -40,6 +40,39 @@ const Transactions = () => {
             <td>Fraud</td>
             <td>14.02.2024</td>
           </tr>
+          <tr>
+            <td>3</td>
+            <td>
+                Transactiion fraud
+            </td>
+            <td>
+              <span className={`${styles.status} ${styles.done}`}>Done</span>
+            </td>
+            <td>Fraud</td>
+            <td>14.02.2024</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+                Transactiion fraud
+            </td>
+            <td>
+              <span className={`${styles.status} ${styles.pending}`}>Pending</span>
+            </td>
+            <td>Fraud</td>
+            <td>14.02.2024</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+                Transactiion fraud
+            </td>
+            <td>
+              <span className={`${styles.status} ${styles.pending}`}>Pending</span>
+            </td>
+            <td>Fraud</td>
+            <td>14.02.2024</td>
+          </tr>
           {/* Repeat this structure for other complaints */}
         </tbody>
       </table>

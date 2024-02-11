@@ -35,18 +35,13 @@ const menuItems = [
         path: "/dashboard/products",
         icon: <MdShoppingBag />,
       },
-      {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
-      },
     ],
   },
   {
     title: "Analytics",
     list: [
       {
-        title: "Revenue",
+        title: "Wallet",
         path: "/dashboard/revenue",
         icon: <MdWork />,
       },
