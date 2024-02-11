@@ -3,7 +3,9 @@ import Chart from "../ui/dashboard/chart/chart";
 import styles from "../ui/dashboard/dashboard.module.css";
 import Transactions from "../ui/dashboard/transactions/transactions";
 
-const Dashboard = () => {
+const Dashboard =async() => {
+
+  const aadhar = 319331933193;
 
   // DUMMY DATA
 
@@ -34,6 +36,8 @@ const Dashboard = () => {
     change: 13,
   },
 ];
+
+const response = await axios.post('http://localhost:8080/getcomplaints', { useRef:aadhar });
 
   return (
     <div className={styles.wrapper}>

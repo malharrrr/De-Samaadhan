@@ -3,6 +3,7 @@ const fs = require('fs');
 require('dotenv').config();
 const { JsonRpcProvider } = require('ethers/providers');
 
+
 // Your private 
 
 
@@ -23,13 +24,13 @@ const { JsonRpcProvider } = require('ethers/providers');
 
     // Replace with your contract address
     //0x6fb951f33e4e52ef0e9c1f78325a9223d7dd1f4d
-    const contractAddress = '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4';
+    const contractAddress = '0x5FD6eB55D12E759a21C09eF703fe0CBa1DC9d88D';
 
     // Create a contract instance
     const contract = new ethers.Contract(contractAddress, contractABI, connectedWallet);
 
     // Function to store a string
-    
+    let count = 1;
 
 
 
@@ -38,7 +39,8 @@ const { JsonRpcProvider } = require('ethers/providers');
             await contract.setUserId(useRef);
             await contract.setOfficerId(124);
             await contract.fileComplain(useRef);
-            await contract.setUserHash(useRef, IPFShash);
+            await contract.mapComplaintToIpfsHash(count, IPFShash);
+            count = count + 1;
             console.log('String stored successfully');
         } catch (error) {
             console.error('Error while storing string:', error);

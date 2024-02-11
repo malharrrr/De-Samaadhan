@@ -68,6 +68,10 @@ public Complaints;
 mapping(uint256
 => uint256[])
 public userComplaints;
+   
+mapping(uint256
+=> string)
+public complaintIpfsHashes;
 
 
    
@@ -207,6 +211,8 @@ if
 return allComplaints;
    
 }
+
+
 
 
 
@@ -502,4 +508,150 @@ public
 = _officerId;
    
 }
+   
+function mapComplaintToIpfsHash(uint256
+_id,
+string
+memory _ipfsHash)
+public onlyOfficer
+returns
+(string
+memory){
+       
+require(Complaints[_id].exists
+==
+true,
+"Complaint ID not found!");
+       
+       
+// Map the complaint ID to the provided IPFS hash
+        complaintIpfsHashes[_id]
+= _ipfsHash;
+       
+return complaintIpfsHashes[_id];
+   
+}
+
+
+   
+function getIpfsHashByComplaintId(uint256
+_id)
+public
+view
+returns
+(string
+memory)
+{
+       
+require(Complaints[_id].exists
+==
+true,
+"Complaint ID not found!");
+       
+       
+// Retrieve the IPFS hash associated with the given complaint ID
+       
+return complaintIpfsHashes[_id];
+   
+}
+
+
+   
+function getIpfsHashArrayByUserId(uint256
+_userId)
+public
+view
+returns
+(string[]
+memory)
+{
+       
+// Retrieve all complaint IDs associated with the given user ID
+       
+uint256[]
+memory userComplaintIds
+= userComplaints[_userId];
+       
+       
+// Create an array to store the corresponding IPFS hashes
+       
+string[]
+memory ipfsHashArray
+=
+new
+string[](userComplaintIds.length);
+
+
+       
+// Populate the array with IPFS hashes for each complaint ID
+       
+for
+(uint256
+i =
+0;
+i < userComplaintIds.length;
+i++)
+{
+            ipfsHashArray[i]
+= complaintIpfsHashes[userComplaintIds[i]];
+       
+}
+
+
+       
+return ipfsHashArray;
+   
+}
+
+
+   
+function getIpfsHashArrayOfComplaints()
+public
+view
+returns
+(string[]
+memory)
+{
+       
+// Create an array to store all IPFS hashes for existing complaints
+       
+string[]
+memory ipfsHashArray
+=
+new
+string[](nextId
+-
+1);
+
+
+       
+// Populate the array with IPFS hashes for each existing complaint
+       
+for
+(uint256
+i =
+1;
+i < nextId;
+i++)
+{
+           
+if
+(Complaints[i].exists)
+{
+                ipfsHashArray[i
+-
+1]
+= complaintIpfsHashes[i];
+           
+}
+       
+}
+
+
+       
+return ipfsHashArray;
+   
+}
+
+
 }

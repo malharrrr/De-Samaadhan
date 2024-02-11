@@ -50,15 +50,14 @@
 
         try{
 
-            let imgBase64 = await convertPdf();
+            //let imgBase64 = await convertPdf();
 
             const body = {
             useRef: aadhar,
             jsonData: {
               "Complaint-Title": complaintTitle,
               "Category": category,
-              "Complaint-Description": complaintDescription,          
-              "pdf": imgBase64
+              "Complaint-Description": complaintDescription,
             }}
 
             console.log(body);

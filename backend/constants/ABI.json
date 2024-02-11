@@ -49,6 +49,32 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_userId",
+				"type": "uint256"
+			}
+		],
+		"name": "fileComplain",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_userId",
+				"type": "uint256"
+			}
+		],
+		"name": "setUserId",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "_officerId",
 				"type": "uint256"
 			},
@@ -102,12 +128,23 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_userId",
+				"name": "_id",
 				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_ipfsHash",
+				"type": "string"
 			}
 		],
-		"name": "fileComplain",
-		"outputs": [],
+		"name": "mapComplaintToIpfsHash",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -146,11 +183,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_userId",
+				"name": "_id",
 				"type": "uint256"
 			}
 		],
-		"name": "setUserId",
+		"name": "spamComplaint",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -159,13 +196,19 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_id",
+				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "spamComplaint",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "complaintIpfsHashes",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -291,6 +334,57 @@
 				"internalType": "uint256[]",
 				"name": "",
 				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_userId",
+				"type": "uint256"
+			}
+		],
+		"name": "getIpfsHashArrayByUserId",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getIpfsHashArrayOfComplaints",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			}
+		],
+		"name": "getIpfsHashByComplaintId",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",

@@ -32,8 +32,8 @@ async function addUserDetails(useRef) {
 // addUserDetails(useRef, FormData)
 
 
-async function fetchUserDetails() {
-    const useRef = 123;
+async function fetchUserDetails(useRef) {
+    
     try {      
       const IpfsHash = await getUserHash(useRef);
       await downloadFile(IpfsHash, `${useRef}`);

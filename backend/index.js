@@ -47,14 +47,14 @@ app.post('/addcomplaint', async (req, res) => {
   });
 
 
-  app.post('/getuserdetails', async (req, res) => {
+  app.post('/getcomplaints', async (req, res) => {
     const { useRef } = req.body;
     try {
-      await fetchUserDetails(); // Ensure file creation completes before reading it
+      await fetchUserDetails(useRef); // Ensure file creation completes before reading it
   
       // Now read the file asynchronously
       try {
-        const data = await fetchUserDetails();     
+        const data = await fetchUserDetails(useRef);     
         const jsonData = JSON.parse(data.toString());
         console.log(jsonData);
         res.status(200).send(jsonData);
