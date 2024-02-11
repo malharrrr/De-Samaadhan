@@ -1,7 +1,13 @@
+'use client'
+import React,{ useState } from "react";
 import Image from "next/image";
 import styles from "./transactions.module.css";
 
-const Transactions = () => {
+const Transactions = (props) => {
+
+  const { data,show } = props;
+  
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Latest Complaints</h2>
@@ -18,60 +24,60 @@ const Transactions = () => {
         <tbody>
           <tr>
           <td>1</td>
-            <td>Phone Theft</td>
+            <td>{show && (<>Malhar ka Metamask Wallet</>)}</td>
             <td>
               <span className={`${styles.status} ${styles.pending}`}>
-                Pending
+              {show && (<>Pending</>)}
               </span>
             </td>
-            <td>Theft</td>
-            <td>14.02.2024</td>
+            <td>{show && (<>FIRs</>)}</td>
+            <td>{show && (<>11.02.2024</>)}</td>
           </tr>
           {/* Repeat similar structure for other complaints */}
           {/* Example for another complaint */}
           <tr>
             <td>2</td>
             <td>
-                Fraud messages
+            {show && (<>FRAUD Messages</>)}
             </td>
             <td>
-              <span className={`${styles.status} ${styles.done}`}>Done</span>
+              <span className={`${styles.status} ${styles.done}`}>{show && (<>Done</>)}</span>
             </td>
-            <td>Fraud</td>
-            <td>14.02.2024</td>
+            <td>{show && (<>FIRs</>)}</td>
+            <td>{show && (<>11.02.2024</>)}</td>
           </tr>
           <tr>
             <td>3</td>
             <td>
-                Transactiion fraud
+            {show && (<>Transcation Fraud</>)}
             </td>
             <td>
-              <span className={`${styles.status} ${styles.done}`}>Done</span>
+              <span className={`${styles.status} ${styles.done}`}>{show && (<>Done</>)}</span>
             </td>
-            <td>Fraud</td>
-            <td>14.02.2024</td>
+            <td>{show && (<>Tax</>)}</td>
+            <td>{show && (<>11.02.2024</>)}</td>
           </tr>
           <tr>
             <td>4</td>
             <td>
-                Transactiion fraud
+            {show && (<>Tax Fraud</>)}
             </td>
             <td>
-              <span className={`${styles.status} ${styles.pending}`}>Pending</span>
+              <span className={`${styles.status} ${styles.pending}`}>{show && (<>Pending</>)}</span>
             </td>
-            <td>Fraud</td>
-            <td>14.02.2024</td>
+            <td>{show && (<>Tax</>)}</td>
+            <td>{show && (<>10.02.2024</>)}</td>
           </tr>
           <tr>
             <td>5</td>
             <td>
-                Transactiion fraud
+            {show && (<>Public Service</>)}
             </td>
             <td>
-              <span className={`${styles.status} ${styles.pending}`}>Pending</span>
+              <span className={`${styles.status} ${styles.pending}`}>{show && (<>Pending</>)}</span>
             </td>
-            <td>Fraud</td>
-            <td>14.02.2024</td>
+            <td>{show && (<>Public Service</>)}</td>
+            <td>{show && (<>10.02.2024</>)}</td>
           </tr>
           {/* Repeat this structure for other complaints */}
         </tbody>

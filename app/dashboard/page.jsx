@@ -3,7 +3,7 @@ import Card from "../ui/dashboard/card/card";
 import Chart from "../ui/dashboard/chart/chart";
 import styles from "../ui/dashboard/dashboard.module.css";
 import Transactions from "../ui/dashboard/transactions/transactions";
-import React,{ useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import axios from "axios";
 import { UserAuth } from "../context/AuthContext";
 
@@ -12,6 +12,9 @@ const Dashboard =() => {
   const { user } = UserAuth();
 
   // DUMMY DATA
+
+  const [data, setData] = useState(null);
+  const [show, setShow] = useState(false);
 
  const cards = [
   {
@@ -42,8 +45,13 @@ const Dashboard =() => {
 ];
 
 async function fetchData(){
-  console.log("USER ID IS ",user.uid);
-  const response = await axios.post('http://localhost:8080/getcomplaints', { useRef: user.uid });
+  // console.log("USER ID IS ",user.uid);
+  // const response = await axios.post('http://localhost:8080/getcomplaints', { useRef: user.uid });
+  // setData(response.data);
+  // console.log(data);
+  setTimeout(() => {
+    setShow(true);
+}, 1000); 
 }
 
 
@@ -60,7 +68,7 @@ async function fetchData(){
         </div>
         <button onClick={fetchData} className="text-3xl">FETCH</button>
         {/* <button onClick={() => fetchData()} className="text-3xl">FETCH DATA</button> */}
-        <Transactions />
+        <Transactions data={data} show={show}/>
         <Chart />
       </div>
     </div>
