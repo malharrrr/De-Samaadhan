@@ -1,11 +1,15 @@
+'use client'
 import Card from "../ui/dashboard/card/card";
 import Chart from "../ui/dashboard/chart/chart";
 import styles from "../ui/dashboard/dashboard.module.css";
 import Transactions from "../ui/dashboard/transactions/transactions";
+import React,{ useEffect } from "react";
+import axios from "axios";
+import { UserAuth } from "../context/AuthContext";
 
-const Dashboard =async() => {
+const Dashboard =() => {
 
-  const aadhar = 319331933193;
+  const { user } = UserAuth();
 
   // DUMMY DATA
 
@@ -37,7 +41,17 @@ const Dashboard =async() => {
   },
 ];
 
-const response = await axios.post('http://localhost:8080/getcomplaints', { useRef:aadhar });
+async function fetchData(){
+  console.log("sending request ");
+  const response = await axios.post('http://localhost:8080/getcomplaints', { useRef: user.uid });
+}
+
+
+useEffect(() => {
+  // Fetch data when component mounts
+  fetchData();
+}, []);
+
 
   return (
     <div className={styles.wrapper}>
@@ -45,8 +59,9 @@ const response = await axios.post('http://localhost:8080/getcomplaints', { useRe
         <div className={styles.cards}>
           {cards.map((item) => (
             <Card item={item} key={item.id} />
-          ))}
+          ))}          
         </div>
+        {/* <button onClick={() => fetchData()} className="text-3xl">FETCH DATA</button> */}
         <Transactions />
         <Chart />
       </div>

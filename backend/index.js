@@ -1,5 +1,5 @@
 const express = require('express');
-const { addUserDetails, fetchUserDetails,genCertificate,revoCertificate,fetchuserCertificate} = require('./main.js'); // replace with your contract file path
+const { addUserDetails, fetchSpecificUserComplaintDetails, fetchAdminComplaintIds } = require('./main.js'); // replace with your contract file path
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const fs = require('fs');
@@ -50,7 +50,8 @@ app.post('/addcomplaint', async (req, res) => {
   app.post('/getcomplaints', async (req, res) => {
     const { useRef } = req.body;
     try {
-      await fetchUserDetails(useRef); // Ensure file creation completes before reading it
+      await fetchSpecificUserComplaintDetails(useRef/**send user id */); // Ensure file creation completes before reading it
+      await fetchAdminComplaintIds();
   
       // Now read the file asynchronously
       try {
@@ -70,6 +71,6 @@ app.post('/addcomplaint', async (req, res) => {
   });
 
   const port = parseInt(process.env.PORT) || 8080;
-app.listen(port, () => {
+  app.listen(port, () => {
   console.log(`helloworld: listening on port ${port}`);
 });
