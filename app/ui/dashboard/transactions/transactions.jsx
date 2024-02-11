@@ -24,13 +24,13 @@ const Transactions = (props) => {
         <tbody>
           <tr>
           <td>1</td>
-            <td>{show && (<>Malhar ka Metamask Wallet</>)}</td>
+            <td>{show && (<>Missed Filing Tax Return</>)}</td>
             <td>
               <span className={`${styles.status} ${styles.pending}`}>
               {show && (<>Pending</>)}
               </span>
             </td>
-            <td>{show && (<>FIRs</>)}</td>
+            <td>{show && (<>TAX</>)}</td>
             <td>{show && (<>11.02.2024</>)}</td>
           </tr>
           {/* Repeat similar structure for other complaints */}
