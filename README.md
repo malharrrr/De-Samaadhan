@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# De-Samaadhan: Decentralized Complaint Management System
 
-## Getting Started
+## Overview
+De-Samaadhan is a decentralized complaint management system designed to provide a secure and transparent platform for handling complaints. Leveraging cutting-edge technologies and a decentralized architecture, De-Samaadhan ensures anonymity and reliability in managing complaints effectively.
 
-First, run the development server:
+## Technology Stack
+- **User Authentication:** Aadhaar Anon
+- **Frontend:** Next.js
+- **Backend:** Node.js
+- **Blockchain Integration:** Solidity, Polygon
+- **Decentralized Storage:** IPFS Pinata
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key Features Implemented
+1) **Secure User Authentication**: Utilizing Aadhaar Anon for user authentication ensures secure and anonymous access to the platform, protecting user privacy while maintaining the integrity of the complaint management process.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2) **Automated Complaint Handling**: Utilize smart contracts to automate complaint management processes, ensuring transparency and accountability in sectors like taxation and public services.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3) **IPFS-Powered File Storage**: Complaint-related documents and evidence are stored securely on IPFS using Pinata, ensuring reliable and decentralized storage while maintaining accessibility and integrity.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4) **Citizen-Controlled Access**: Empower citizens to track their complaints regarding taxation, online tax portals, and public services, and receive updates throughout the resolution process.
 
-## Learn More
+5) **Immutable Record Keeping**: Utilize blockchain technology to create an unalterable record of complaint-related events, ensuring integrity and authenticity across various sectors.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Future Enhancements
 
-## Deploy on Vercel
+  
+- **Enhanced Analytics**: Integrating advanced analytics tools to provide insights into complaint trends, enabling proactive measures to address systemic issues and improve service delivery.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Multi-Platform Support**: Expanding platform accessibility through mobile applications to cater to a wider user base and enhance user convenience.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Community Governance**: Implementing decentralized governance mechanisms to empower users in decision-making processes and foster a sense of ownership and accountability within the community.
+
+---
+By implementing a decentralized approach to complaint management, De-Samaadhan aims to revolutionize the way complaints are handled, ensuring transparency, security, and efficiency in the resolution process.
