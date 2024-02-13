@@ -97,10 +97,10 @@ const testUpload = () =>{
               </div>
               <div className="flex gap-4">
                <button className='btn1'>
-               Sign in as Client
+               <a href="/login">Sign in as Client</a>
               </button>
               <button className='btn1'>
-               Sign in as admin
+               <a href="/dashboard">Sign in as admin</a>
               </button>
               </div>
             </div>
