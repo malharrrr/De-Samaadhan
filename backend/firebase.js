@@ -10,7 +10,7 @@ require('firebase/compat/firestore');
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAI8Hp5Fo9s31wVE1nH1LTUF1SJEqx2Kzg",
+  apiKey: "firebase_app_api_key",
   authDomain: "de-samadhan.firebaseapp.com",
   projectId: "de-samadhan",
   storageBucket: "de-samadhan.appspot.com",
