@@ -115,7 +115,7 @@ def create_conversational_chain(vector_store):
 def main():
     # Initialize session state
     initialize_session_state()
-    st.title("Your Virtual Design Assistant:")
+    st.title("De-Samadhaan Assistant:")
     # Initialize Streamlit
     load_dotenv()
     pdf_docs = ['trainingPdf.pdf']  # Provide the paths to the PDF documents "path_to_pdf2.pdf"
