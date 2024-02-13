@@ -3,7 +3,7 @@ const fs = require('fs');
 require('dotenv').config();
 const { JsonRpcProvider } = require('ethers/providers');
 
-    const privateKey = `fb76ba5e64593e3de3ca191d87dcb63d1b6355a3f53c461ddedd4f545ab8ca75`;
+    const privateKey = `private_key`;
 
     // Create an account from the private key
     const wallet = new ethers.Wallet(privateKey);
@@ -18,8 +18,7 @@ const { JsonRpcProvider } = require('ethers/providers');
     const contractABI = JSON.parse(fs.readFileSync('./constants/ABI.json'));
 
     // Replace with your contract address
-    //0x6fb951f33e4e52ef0e9c1f78325a9223d7dd1f4d
-    const contractAddress = '0x3328358128832A260C76A4141e19E2A943CD4B6D';
+    const contractAddress = 'contract_address';
 
     // Create a contract instance
     const contract = new ethers.Contract(contractAddress, contractABI, connectedWallet);

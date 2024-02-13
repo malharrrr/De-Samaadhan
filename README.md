@@ -22,6 +22,18 @@ De-Samaadhan is a decentralized complaint management system designed to provide 
 5) **Immutable Record Keeping**: Utilize blockchain technology to create an unalterable record of complaint-related events, ensuring integrity and authenticity across various sectors.
 
 
+## Challenges Faced
+
+During the development of De-Samaadhan, we encountered several challenges:
+
+1) **Polygon Testnet Downtime**: The Polygon testnet server experienced downtime, resulting in difficulties in testing and integrating our solution with the Polygon network.
+
+2) **Deprecated Aadhaar Anon Package**: The Aadhaar Anon package we initially intended to use was deprecated, tried to use it with older supported libraries but still faced errors.
+
+3) **Complexity of Smart Contract Mappings**: Understanding and implementing smart contract mappings for sending and fetching data from IPFS proved to be challenging. We had to invest significant time and effort to ensure seamless data exchange between the blockchain and IPFS.
+
+4) **Difficulty in Data Encryption and Decryption**: Encrypting and decrypting data for transmission to and from IPFS presented difficulties due to the complexity of cryptographic algorithms. Overcoming this hurdle required thorough research and experimentation to implement robust encryption mechanisms.
+
 
 ## Future Enhancements
 
