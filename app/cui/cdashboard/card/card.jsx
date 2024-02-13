@@ -9,11 +9,9 @@ const Card = ({ item }) => {
     <div className={styles.container}>
       
       <div className={styles.texts}>
-        <span className={styles.title}>{item.title}</span>
-        <span className={styles.number}>{item.number}</span>
-        <span className={styles.detail}>
-          
-        </span>
+      <span className={styles.number}>{item.id}</span>
+        <span className={styles.title}>{item.title}</span>        
+        <span>{item.description}</span>
       </div>
     </div>
   );

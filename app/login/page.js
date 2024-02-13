@@ -15,6 +15,7 @@ export default function login(){
 
     const [email,setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [aadhar, setAadhar] = useState("");
     const { user, googleSignIn, LogOut, Login} = UserAuth();
     const [loading, setLoading] = useState(true);
    
@@ -35,7 +36,7 @@ export default function login(){
            const response = await Login(email,password);
            console.log(response);          
            if(response == "client"){                
-                window.location.href = '/dashboard';
+                window.location.href = '/cdashboard';
            }else if(response == "officer"){
                 window.location.href = '/officerdashboard';
            }
@@ -100,6 +101,11 @@ export default function login(){
             <div className="py-2"></div>
             <div className={styles.inputbox}>
                 <input type="password" class="input-field" required value={password} onChange={(event) => setPassword(event.currentTarget.value)}  placeholder="Password"/>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div className="py-2"></div> 
+            <div className={styles.inputbox}>
+                <input type="text" class="input-field" required value={aadhar} onChange={(event) => setAadhar(event.currentTarget.value)}  placeholder="Your 12 digit Aadhar Number"/>
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div className="py-2"></div>            

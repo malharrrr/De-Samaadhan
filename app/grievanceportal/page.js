@@ -10,9 +10,7 @@
 
 
 
-    const Grievance = () => {
-
-    
+    const Grievance = () => {   
 
         async function convertPdf(){
             let imgBase64 = await new Promise((resolve, reject) => {
@@ -90,6 +88,8 @@
             },{merge: true});
             console.log("Data pushed....");
             toast.success('Your form has successfully submited');
+
+            
         }catch(error){
             console.log(error);
             toast.error('Error in Form Submission')
